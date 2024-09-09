@@ -8,15 +8,15 @@ document.getElementById('startButton').addEventListener('click', function() {
         QRCodeScanned(qrCodeMessage);  
         // Nakon skeniranja, zaustavite kameru  
         html5QrCode.stop().then(() => {  
-            console.log("QR skeniranje zaustavljeno.");  
+            alert("QR skeniranje zaustavljeno.");  
         }).catch(err => {  
-            console.warn("Problem pri zaustavljanju QR skeniranja.", err);  
+            alert("Problem pri zaustavljanju QR skeniranja.", err);  
         });  
     }  
   
     function onScanError(errorMessage) {  
         // Obrada grešaka tijekom skeniranja  
-        console.error("Problem pri skeniranju.", errorMessage);  
+        alert("Problem pri skeniranju.", errorMessage);  
     }  
   
     // Start skeniranja koristeći prednju ili stražnju kameru  
@@ -24,6 +24,6 @@ document.getElementById('startButton').addEventListener('click', function() {
 });  
   
 function QRCodeScanned(qrCodeData) {  
-    console.log("Skenirani QR kod:", qrCodeData);  
+    alert("Skenirani QR kod:", qrCodeData);  
     // Ovdje možete dodati logiku što učiniti s podacima QR koda  
 } 
